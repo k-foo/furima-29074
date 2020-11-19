@@ -35,8 +35,7 @@ https://furima-29074.herokuapp.com/
 | :--------          | :-----   | :----------               |
 | nickname           | string   | null: false, unique: true |
 | email              | string   | null: false, unique: true |
-| password           | string   | null: false, unique: true |
-| password_confirm   | string   | null: false, unique: true |
+| encrypted_password | string   | null: false, unique: true |
 | last_name          | string   | null: false               |
 | first_name         | string   | null: false               |
 | last_name_kana     | string   | null: false               |
@@ -57,10 +56,7 @@ https://furima-29074.herokuapp.com/
 | Column            | Type       | Options                        |
 | :------           | :------    | :-----------                   |
 | user              | references | null: false, foreign_key: true |
-| buy               | references | null: false, foreign_key: true |
-| deleted_at        | datetime   |                                |
-| image             | integer    | null: false                    |
-| item_name         | string     | null: false                    |
+| name              | string     | null: false                    |
 | description       | text       | null: false                    |
 | category_id       | integer    | null: false                    |
 | item_status_id    | integer    | null: false                    |
@@ -68,14 +64,12 @@ https://furima-29074.herokuapp.com/
 | delivery_area_id  | integer    | null: false                    |
 | shipping_date_id  | integer    | null: false                    |
 | price             | integer    | null: false                    |
-| commission        | integer    | null: false                    |
-| profit            | integer    | null: false                    |
 
 ### Association
 
 - belongs_to  :user
-- has_one     :item
 - has_one     :buy
+- has_many    :comments
 
 <br>
 
@@ -85,7 +79,6 @@ https://furima-29074.herokuapp.com/
 | :------       | :----------| :------------------------------|
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
-| ordered_at    | datetime   | null: false                    |
 
 ### Association
 
@@ -100,12 +93,12 @@ https://furima-29074.herokuapp.com/
 | Column        | Type       | Options                        |
 | :-------      | :--------- | :------------------------------|
 | buy           | references | null: false, foreign_key: true |
-| postcode      | integer    | null: false                    |
+| postcode      | string     | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
 | block         | string     | null: false                    |
 | building      | string     |                                |
-| phone_number  | integer    | null: false, unique: true      |
+| phone_number  | string     | null: false                    |
 
 ### Association
 
