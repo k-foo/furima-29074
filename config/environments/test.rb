@@ -45,4 +45,8 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+
+  # 「Failure/Error: _query(sql, @query_options.merge(options))」というエラーを解消するために実装
+  # https://github.com/rails/rails/issues/32794
+  config.active_job.queue_adapter = :inline
 end
