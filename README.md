@@ -25,8 +25,7 @@ https://furima-29074.herokuapp.com/
 <!-- Coming Soon -->
 
 # ER図
-![【ER図】furima-29074](https://user-images.githubusercontent.com/68714247/99668899-aaea6c80-2ab1-11eb-9e04-2937fc9b72eb.png)
-
+![【ER図】furima-29074](https://user-images.githubusercontent.com/68714247/99961042-180f4200-2dd1-11eb-8d63-0fae13b0f0b9.png)
 
 # テーブル設計
 
@@ -54,17 +53,17 @@ https://furima-29074.herokuapp.com/
 
 ## items テーブル
 
-| Column            | Type       | Options                        |
-| :------           | :------    | :-----------                   |
-| user              | references | null: false, foreign_key: true |
-| name              | string     | null: false                    |
-| description       | text       | null: false                    |
-| category_id       | integer    | null: false                    |
-| item_status_id    | integer    | null: false                    |
-| shipping_costs_id | integer    | null: false                    |
-| delivery_area_id  | integer    | null: false                    |
-| shipping_date_id  | integer    | null: false                    |
-| price             | integer    | null: false                    |
+| Column           | Type       | Options                        |
+| :------          | :------    | :-----------                   |
+| user             | references | null: false, foreign_key: true |
+| name             | string     | null: false                    |
+| description      | text       | null: false                    |
+| category_id      | integer    | null: false                    |
+| item_status_id   | integer    | null: false                    |
+| shipping_cost_id | integer    | null: false                    |
+| delivery_area_id | integer    | null: false                    |
+| shipping_date_id | integer    | null: false                    |
+| price            | integer    | null: false                    |
 
 ### Association
 
