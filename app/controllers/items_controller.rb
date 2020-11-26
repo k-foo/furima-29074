@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # ログインしていないユーザーはトップページに促す
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
   # 重複処理をまとめる
   before_action :set_item, only: :show
   # before_action :set_item, only: [:edit, :show]
