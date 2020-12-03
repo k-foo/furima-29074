@@ -25,7 +25,7 @@ https://furima-29074.herokuapp.com/
 <!-- Coming Soon -->
 
 # ER図
-![【ER図】furima-29074](https://user-images.githubusercontent.com/68714247/99961042-180f4200-2dd1-11eb-8d63-0fae13b0f0b9.png)
+![【ER図】furima-29074](https://user-images.githubusercontent.com/68714247/101014695-9c1fb180-35a9-11eb-999c-376c0ecd1015.png)
 
 # テーブル設計
 
@@ -46,7 +46,7 @@ https://furima-29074.herokuapp.com/
 ### Association
 
 - has_many :items
-- has_many :buys
+- has_many :orders
 - has_many :comments
 
 <br>
@@ -68,12 +68,12 @@ https://furima-29074.herokuapp.com/
 ### Association
 
 - belongs_to  :user
-- has_one     :buy
+- has_one     :order
 - has_many    :comments
 
 <br>
 
-##  buysテーブル
+##  ordersテーブル
 
 | Column        | Type       | Options                        |
 | :------       | :----------| :------------------------------|
@@ -84,15 +84,15 @@ https://furima-29074.herokuapp.com/
 
 - belongs_to :user
 - belongs_to :item
-- has_one    :shipping_address
+- has_one    :payment
 
 <br>
 
-## shipping_addressesテーブル
+## paymentsテーブル
 
 | Column        | Type       | Options                        |
 | :-------      | :--------- | :------------------------------|
-| buy           | references | null: false, foreign_key: true |
+| orders        | references | null: false, foreign_key: true |
 | postcode      | string     | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
@@ -102,7 +102,7 @@ https://furima-29074.herokuapp.com/
 
 ### Association
 
-- belongs_to :buy
+- belongs_to :order
 
 <br>
 
