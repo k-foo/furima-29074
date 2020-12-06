@@ -22,7 +22,7 @@ RSpec.describe Item, type: :model do
         expect(@item).to be_valid
       end
       it '発送元の地域が「---」以外であれば登録できる' do
-        @item.delivery_area_id = 1
+        @item.prefecture_id = 1
         expect(@item).to be_valid
       end
       it '発送までの日数が「---」以外であれば登録できる' do
@@ -87,14 +87,14 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Shipping cost can't be blank", 'Shipping cost is not a number')
       end
       it '発送元の地域の情報が「---」だと出品できない' do
-        @item.delivery_area_id = 0
+        @item.prefecture_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include('Delivery area must be other than 0')
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 0')
       end
       it '発送元の地域の情報が空欄だと出品できない' do
-        @item.delivery_area_id = nil
+        @item.prefecture_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery area can't be blank", 'Delivery area is not a number')
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank", 'Prefecture is not a number')
       end
       it '発送までの日数の情報が「---」だと出品できない' do
         @item.shipping_date_id = 0
