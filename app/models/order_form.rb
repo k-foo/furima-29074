@@ -13,7 +13,7 @@ class OrderForm
     validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
     validates :city
     validates :block
-    validates :phone_number, format: { with: /\A[0-9]+{11}\z/, message: 'テストコード後に実装！' }
+    validates :phone_number, format: { with: /\A[0-9]{11}\z/, message: 'is invalid' }
   end
 
   def save
