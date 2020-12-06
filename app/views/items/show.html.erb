@@ -33,7 +33,7 @@
       <%= link_to '削除', item_path(@item), method: :delete, class:'item-destroy' %>
     <% else %>
     <%# 商品の購入ができるのは、出品者以外のみ %>
-      <%= link_to '購入画面に進む', '#', class:"item-red-btn"%>
+      <%= link_to '購入画面に進む', item_orders_path(@item), class:"item-red-btn"%>
     <% end %>
   <% end %>
 
@@ -60,7 +60,7 @@
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= @item.delivery_area.name %></td>
+          <td class="detail-value"><%= @item.prefecture.name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
