@@ -9,11 +9,12 @@
     <div class='item-img-content'>
       <%= image_tag @item.image.variant(resize: '500x500'),class:"item-box-img" %>
   
-      <%# 商品が売れている場合は、sold outを表示しましょう %>
-      <%# <div class='sold-out'>
+      <%# 商品が売れている場合は、sold outを表示 %>
+      <% if @item.order != nil %>
+      <div class='sold-out'>
         <span>Sold Out!!</span>
-      </div> %>
-      <%# //商品が売れている場合は、sold outを表示しましょう %>
+      </div>
+      <% end %> 
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -24,17 +25,16 @@
       </span>
     </div>
 
-<%# 新規登録していない人でも詳細画面を見られるが以下のボタンは登録者のみ %>
-  <% if user_signed_in? %> 
-    <%# 商品の編集・削除ができるのは、本人のみ %>
-    <% if current_user.id == @item.user_id then %>
+<%# 新規登録済み かつ 商品の出品者 かつ 未購入の商品の場合 %> 
+  <% if user_signed_in? && current_user.id == @item.user_id && @item.order.present? %> 
       <%= link_to '商品の編集', edit_item_path(@item), method: :get, class: "item-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', item_path(@item), method: :delete, class:'item-destroy' %>
     <% else %>
-    <%# 商品の購入ができるのは、出品者以外のみ %>
-      <%= link_to '購入画面に進む', item_orders_path(@item), class:"item-red-btn"%>
-    <% end %>
+    <%# 新規登録済み かつ 商品の出品者ではない かつ 未購入商品の場合 %>
+        <% if user_signed_in? && @item.order.blank? %>
+          <%= link_to '購入画面に進む', item_orders_path(@item), class:"item-red-btn"%>
+        <% end %>
   <% end %>
 
     <div class="item-explain-box">
