@@ -204,3 +204,15 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.disabled-button{
+  text-align: center;
+  margin: 16px 0 0;
+  background: #888888;
+  color: #fff;
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  line-height: 60px;
+  cursor: not-allowed;
+}
