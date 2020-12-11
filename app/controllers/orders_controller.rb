@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
 
   def create
     @order_form = OrderForm.new(order_params)
-    @item.price = Item.find(params[:item_id]).price
     if @order_form.valid?
       pay_item
       @order_form.save
@@ -17,14 +16,14 @@ class OrdersController < ApplicationController
       render :index
     end
   end
-  
+
   private
-  
+
   def order_params
     # この時点では、order_idが不要。またrequire外の情報は参照するため、mergeとする。
     params.require(:order_form).permit(:postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
-  
+
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
@@ -33,7 +32,7 @@ class OrdersController < ApplicationController
       currency: 'jpy'             # 通貨の種類（日本円）
     )
   end
-  
+
   def non_purchased_item
     # itemがあっての、order_form（入れ子構造）。他のコントローラーで生成されたitemを使うにはcreateアクションに定義する。
     @item = Item.find(params[:item_id])
