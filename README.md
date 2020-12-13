@@ -26,7 +26,7 @@ https://furima-29074.herokuapp.com/
 <!-- Coming Soon -->
 
 # ER 図
-![【ER図】furima-29074](https://user-images.githubusercontent.com/68714247/101642779-bad4eb00-3a76-11eb-953d-bc084729ac2e.png)
+<img width="1254" alt="【ER図】furima-29074" src="https://user-images.githubusercontent.com/68714247/102007762-2799ff00-3d6f-11eb-9e11-58e7b2c9d1d9.png">
 
 # テーブル設計
 
