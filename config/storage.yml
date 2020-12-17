@@ -7,11 +7,19 @@ local:
   root: <%= Rails.root.join("storage") %>
 
 amazon:
+<<<<<<< Updated upstream
  service: S3
  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
  region: ap-northeast-1
  bucket: furima29074
+=======
+  service: S3
+  region: ap-northeast-1
+  bucket: 29074furima
+  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+>>>>>>> Stashed changes
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
