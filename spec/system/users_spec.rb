@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 def basic_pass
-  username = "admin"
-  password = "2222"
+  username = "BASIC_AUTH_USER"
+  password = "BASIC_AUTH_PASSWORD"
   visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}"
 end
 
