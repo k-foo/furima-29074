@@ -13,29 +13,29 @@
 <br>
 
 # URL 
-###### AWS EC2によるデプロイ
+##### AWS EC2によるデプロイ
 http://54.248.239.158/
 
-###### Herokuによるデプロイ
+##### Herokuによるデプロイ
 https://furima-29074.herokuapp.com/
 
-###### Basic認証
+##### Basic認証
 - ID: admin
 - Pass: 2222
 <br>
 <br>
 
 # テスト用アカウント
-###### 購入者用
+##### 購入者用
 - メールアドレス: aozora@gmail.com
 - パスワード: aozora1
 
-###### 購入用カード情報(PAYJPテスト用)
+##### 購入用カード情報(PAYJPテスト用)
 番号：4242424242424242
 期限：3月/（20）22年
 セキュリティコード：123
 
-###### 出品者用
+##### 出品者用
 メールアドレス名: konoha@gmail.com
 パスワード: konoha1
 <br>
@@ -50,12 +50,14 @@ https://furima-29074.herokuapp.com/
 
 ## 1.ユーザー登録機能
 ユーザー登録することで出品・購入できるようになります。（ユーザー登録していない人でも出品している商品を見ることは可能です。）
+
 ![1 user_registration](https://user-images.githubusercontent.com/68714247/107143755-2acdf780-697a-11eb-9163-68e4d5e25643.gif)
 
 <br>
 
 ## 2.商品出品機能
 商品画像を選択し、商品情報や販売したい金額を入力すると、出品することができます。（JavaScriptで販売手数料が表示されるようになっています。）
+
 ![2 products_listing](https://user-images.githubusercontent.com/68714247/107143777-420ce500-697a-11eb-8693-1bbff89abb6a.gif)
 
 <br>
